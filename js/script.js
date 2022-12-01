@@ -42,9 +42,17 @@ const next = document.querySelector('.next');
 
 next.addEventListener('click', function(){
 
+    if(itemActive == 5){
+        itemActive = 0
+    }
    
     items[itemActive].classList.remove('active')
     items[++itemActive].classList.add('active')
+
+    if(circleActive == 5){
+        circleActive = 0
+    }
+
     
     circles[circleActive].classList.remove('active')
     circles[++circleActive].classList.add('active')
