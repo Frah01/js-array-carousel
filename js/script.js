@@ -76,7 +76,7 @@ prev.addEventListener('click', function(){
     
     items[itemActive].classList.remove('active')
         
-    if(itemActive-1 == -1){
+    if(itemActive-1 === -1){
         itemActive = imagesArray.length -1
         
     } 
@@ -93,7 +93,7 @@ prev.addEventListener('click', function(){
     
     circles[circleActive].classList.remove('active')
 
-    if(circleActive-1 == -1){
+    if(circleActive-1 === -1){
         circleActive = imagesArray.length -1
     }
     
