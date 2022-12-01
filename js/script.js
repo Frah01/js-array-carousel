@@ -41,21 +41,33 @@ const prev = document.querySelector('.prev');
 const next = document.querySelector('.next');
 
 next.addEventListener('click', function(){
-
-    if(itemActive == 5){
-        itemActive = 0
-    }
-   
+    
     items[itemActive].classList.remove('active')
-    items[++itemActive].classList.add('active')
+        
+    if(itemActive+1 === imagesArray.length){
+        itemActive = 0
+    } 
 
-    if(circleActive == 5){
-        circleActive = 0
+    else {
+        itemActive++
     }
+    
+    items[itemActive].classList.add('active')
+
+    
 
     
     circles[circleActive].classList.remove('active')
-    circles[++circleActive].classList.add('active')
+
+    if(circleActive+1 === imagesArray.length){
+        circleActive = 0
+    }
+    
+    else {
+        circleActive++
+    }
+    
+    circles[circleActive].classList.add('active')
 
 
 });
@@ -63,11 +75,33 @@ next.addEventListener('click', function(){
 prev.addEventListener('click', function(){
     
     items[itemActive].classList.remove('active')
-    items[--itemActive].classList.add('active')
-   
+        
+    if(itemActive-1 == -1){
+        itemActive = imagesArray.length -1
+        
+    } 
 
+    else {
+        itemActive--
+    }
+    
+    
+    items[itemActive].classList.add('active')
+
+    
+
+    
     circles[circleActive].classList.remove('active')
-    circles[--circleActive].classList.add('active')
+
+    if(circleActive-1 == -1){
+        circleActive = imagesArray.length -1
+    }
+    
+    else {
+        circleActive--
+    }
+    
+    circles[circleActive].classList.add('active')
 
 
 })
