@@ -32,36 +32,35 @@ items[itemActive].classList.add('active');
 //rendo attivo anche il primo cerchio di navigazione
 
 const circles = document.getElementsByClassName('circle');
+let circleActive = 0;
 
-circles[itemActive].classList.add('active');
+
+circles[circleActive].classList.add('active');
 
 const prev = document.querySelector('.prev');
 const next = document.querySelector('.next');
 
 next.addEventListener('click', function(){
 
-    //verifico l'elemento attivo (itemActive)
-    
-
-    //incremento il suo valore di 1
+   
     items[itemActive].classList.remove('active')
     items[++itemActive].classList.add('active')
+    
+    circles[circleActive].classList.remove('active')
+    circles[++circleActive].classList.add('active')
 
-    
-    
-    //aggiungere la class active al nuovo elemento dell'array items e la vado a rimuovere da quello precedente
-    //stessa cosa per i cerchi
-    circles[itemActive].classList.remove('active')
-    circles[itemActive].classList.add('active')
+
 });
 
 prev.addEventListener('click', function(){
-    //verifico l'elemento attivo (itemActive)
-    //decremento il suo valore di 1
+    
     items[itemActive].classList.remove('active')
     items[--itemActive].classList.add('active')
-    //aggiungere la class active al nuovo elemento dell'array items e la vado a rimuovere da quello precedente
-    //stessa cosa per i cerchi
+   
+
+    circles[circleActive].classList.remove('active')
+    circles[--circleActive].classList.add('active')
+
 
 })
 
